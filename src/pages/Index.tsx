@@ -63,16 +63,31 @@ const Index = () => {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="gradient-bg py-20 lg:py-32">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Hero Section with Video Background */}
+      <section className="relative py-20 lg:py-32 overflow-hidden">
+        {/* Video Background */}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover z-0"
+        >
+          <source src="https://player.vimeo.com/external/434045526.sd.mp4?s=c27eecc69a27dbc4ff2b87d38afc35f1c9e8c0ec&profile_id=139&oauth2_token_id=57447761" type="video/mp4" />
+        </video>
+        
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black bg-opacity-50 z-10"></div>
+        
+        {/* Content */}
+        <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center animate-fade-in">
-            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 font-playfair">
-              Your Trusted <span className="text-brand-blue">Recruitment</span> & 
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 font-playfair">
+              Your Trusted <span className="text-blue-400">Recruitment</span> & 
               <br className="hidden sm:block" />
-              <span className="text-brand-gold"> HR Solutions</span> Partner
+              <span className="text-yellow-400"> HR Solutions</span> Partner
             </h1>
-            <p className="text-xl md:text-2xl text-gray-700 mb-8 max-w-3xl mx-auto">
+            <p className="text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto">
               Connecting exceptional talent with outstanding opportunities across Abu Dhabi, UAE, and beyond.
             </p>
             
@@ -81,10 +96,10 @@ const Index = () => {
               {stats.map((stat, index) => (
                 <div key={index} className="text-center animate-slide-in" style={{ animationDelay: `${index * 0.1}s` }}>
                   <div className="flex justify-center mb-2">
-                    <stat.icon className="h-8 w-8 text-brand-blue" />
+                    <stat.icon className="h-8 w-8 text-blue-400" />
                   </div>
-                  <div className="text-2xl md:text-3xl font-bold text-brand-blue">{stat.value}</div>
-                  <div className="text-sm text-gray-600">{stat.label}</div>
+                  <div className="text-2xl md:text-3xl font-bold text-blue-400">{stat.value}</div>
+                  <div className="text-sm text-gray-300">{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -94,8 +109,8 @@ const Index = () => {
               <Button size="lg" className="gradient-blue text-white hover:opacity-90 transition-opacity">
                 <Link to="/contact">Start Hiring Today</Link>
               </Button>
-              <Button size="lg" variant="outline" className="border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-white">
-                <Link to="/careers">Find Your Dream Job</Link>
+              <Button size="lg" variant="outline" className="border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-white">
+                <Link to="/contact">Find Your Dream Job</Link>
               </Button>
             </div>
           </div>
