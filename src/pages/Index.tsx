@@ -109,7 +109,7 @@ const Index = () => {
               <Button size="lg" className="gradient-blue text-white hover:opacity-90 transition-opacity">
                 <Link to="/contact">Start Hiring Today</Link>
               </Button>
-              <Button size="lg" variant="outline" className="border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-white">
+              <Button size="lg" variant="outline" className="border-yellow-400 text-yellow-400 bg-transparent hover:bg-yellow-400 hover:text-white">
                 <Link to="/contact">Find Your Dream Job</Link>
               </Button>
             </div>
@@ -223,7 +223,7 @@ const Index = () => {
             <Button size="lg" variant="secondary" className="bg-white text-brand-blue hover:bg-gray-100">
               <Link to="/contact">Contact Us Today</Link>
             </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-brand-blue">
+            <Button size="lg" variant="outline" className="border-white bg-transparent text-white hover:bg-white hover:text-brand-blue">
               <Link to="/about">Learn More About Us</Link>
             </Button>
           </div>
