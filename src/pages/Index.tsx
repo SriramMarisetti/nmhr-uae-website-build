@@ -71,13 +71,13 @@ const Index = () => {
           muted
           loop
           playsInline
-          className="absolute inset-0 w-full h-full object-cover z-0"
+          className="absolute inset-0 w-full h-full object-cover z-0 scale-105"
         >
-          <source src="https://player.vimeo.com/external/434045526.sd.mp4?s=c27eecc69a27dbc4ff2b87d38afc35f1c9e8c0ec&profile_id=139&oauth2_token_id=57447761" type="video/mp4" />
+          <source src="https://res.cloudinary.com/dbtkas8kr/video/upload/v1751542827/workers_720p_osm2z4.mp4" />
         </video>
         
         {/* Overlay */}
-        <div className="absolute inset-0 bg-black bg-opacity-50 z-10"></div>
+        <div className="absolute inset-0 bg-black bg-opacity-70 z-10"></div>
         
         {/* Content */}
         <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
