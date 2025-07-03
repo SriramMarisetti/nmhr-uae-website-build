@@ -9,53 +9,61 @@ const About = () => {
     {
       icon: Shield,
       title: 'Integrity',
-      description: 'We maintain the highest ethical standards in all our interactions and business practices.',
+      description: 'Transparency and accountability at every step of our process.',
     },
     {
       icon: Award,
       title: 'Excellence',
-      description: 'We strive for excellence in every service we provide, exceeding client expectations.',
+      description: 'High-quality service that exceeds expectations and delivers results.',
     },
     {
       icon: Heart,
       title: 'Commitment',
-      description: 'We are committed to building long-term relationships and delivering on our promises.',
+      description: 'Dedication to long-term client satisfaction and partnership success.',
     },
     {
       icon: Users,
       title: 'Respect',
-      description: 'We treat all individuals with dignity and respect, valuing diversity and inclusion.',
+      description: 'Valuing every client, candidate, and partner equally with dignity.',
     },
   ];
 
   const whyChooseUs = [
     {
       icon: Globe,
-      title: 'Extensive Talent Pool',
-      description: 'Access to a diverse network of qualified professionals across multiple industries.',
+      title: 'Extensive Global Talent Pool',
+      description: 'Access to qualified candidates from India, Philippines, Nepal, Sri Lanka, and Bangladesh.',
     },
     {
       icon: Clock,
-      title: 'Quick Turnaround',
-      description: 'Efficient processes ensuring fast placement and minimal downtime for your business.',
+      title: 'Quick Turnaround Time',
+      description: 'Efficient processes ensuring fast placement and minimal downtime for urgent staffing needs.',
     },
     {
       icon: Users,
-      title: 'Dedicated Support',
-      description: '24/7 client support with dedicated account managers for personalized service.',
+      title: 'Long-term Support',
+      description: 'Post-placement client support and follow-up to ensure continued satisfaction.',
     },
     {
       icon: Shield,
-      title: 'Legal Compliance',
-      description: 'Full compliance with UAE labor laws and regulations for worry-free operations.',
+      title: 'UAE Labor Law Compliance',
+      description: 'Full compliance with UAE labor laws and international regulations for worry-free operations.',
     },
   ];
 
   const achievements = [
     { number: '582+', label: 'Successful Placements' },
-    { number: '500+', label: 'Satisfied Clients' },
-    { number: '5+', label: 'Countries Served' },
-    { number: '10+', label: 'Years of Excellence' },
+    { number: '215+', label: 'Professionals Serving Clients' },
+    { number: '500+', label: 'Satisfied Customers' },
+    { number: '30+', label: 'Years of HR Expertise' },
+  ];
+
+  const process = [
+    { step: 'Consultation', description: 'Understanding your requirements and company culture' },
+    { step: 'Sourcing', description: 'Accessing our global recruitment network across 5 countries' },
+    { step: 'Screening', description: 'Background checks, skill assessments, and cultural orientation' },
+    { step: 'Mobilization', description: 'Visa processing, travel arrangements, and onboarding' },
+    { step: 'Follow-Up', description: 'Post-deployment support and continuous feedback' },
   ];
 
   return (
@@ -68,8 +76,8 @@ const About = () => {
               About <span className="text-brand-blue">NM HR Consultancy</span>
             </h1>
             <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-              Your trusted partner in human resources and recruitment solutions across the UAE and beyond. 
-              We bridge the gap between exceptional talent and outstanding opportunities.
+              Your trusted HR partner in Abu Dhabi, UAE. With over 30 years of expertise, we specialize in 
+              providing tailored recruitment and manpower solutions across diverse sectors.
             </p>
           </div>
         </div>
@@ -88,10 +96,9 @@ const About = () => {
                   <h2 className="text-2xl font-bold text-gray-900 font-playfair">Our Mission</h2>
                 </div>
                 <p className="text-gray-600 leading-relaxed">
-                  To empower businesses and individuals by providing exceptional HR and recruitment services 
-                  that drive growth, foster innovation, and create meaningful career opportunities. We are 
-                  committed to building bridges between talent and opportunity, ensuring mutual success for 
-                  our clients and candidates.
+                  To empower clients with skilled and dependable human resources, while enabling job seekers 
+                  to achieve professional growth and success. Our solutions are people-first, compliant, 
+                  and results-driven, connecting businesses with the right talent that drives growth.
                 </p>
               </CardContent>
             </Card>
@@ -105,10 +112,9 @@ const About = () => {
                   <h2 className="text-2xl font-bold text-gray-900 font-playfair">Our Vision</h2>
                 </div>
                 <p className="text-gray-600 leading-relaxed">
-                  To be the leading HR consultancy in the Middle East, recognized for our innovative 
-                  solutions, exceptional service quality, and unwavering commitment to client success. 
-                  We envision a future where every organization has access to the talent they need to 
-                  thrive and every professional finds their ideal career path.
+                  To redefine recruitment by offering reliable, ethical, and efficient manpower solutions. 
+                  We aim to be the leading HR consultancy in the Middle East, connecting businesses with 
+                  the right talent while helping professionals build meaningful careers.
                 </p>
               </CardContent>
             </Card>
@@ -124,7 +130,7 @@ const About = () => {
               Our Core Values
             </h2>
             <p className="text-xl text-gray-600">
-              The principles that guide everything we do.
+              The principles that guide everything we do for over 30 years.
             </p>
           </div>
 
@@ -153,7 +159,7 @@ const About = () => {
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               We combine industry expertise with personalized service to deliver exceptional results 
-              for our clients and candidates.
+              with our skilled internal team and global talent network.
             </p>
           </div>
 
@@ -175,6 +181,32 @@ const About = () => {
         </div>
       </section>
 
+      {/* Our 5-Step Hiring Process */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-playfair">
+              Our 5-Step Hiring Process
+            </h2>
+            <p className="text-xl text-gray-600">
+              A systematic approach to deliver exceptional results with quality assurance.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
+            {process.map((phase, index) => (
+              <div key={index} className="text-center animate-fade-in" style={{ animationDelay: `${index * 0.2}s` }}>
+                <div className="w-16 h-16 bg-gradient-blue rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-white font-bold text-xl">{index + 1}</span>
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">{phase.step}</h3>
+                <p className="text-gray-600 text-sm">{phase.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Achievements */}
       <section className="py-20 gradient-blue text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -183,7 +215,7 @@ const About = () => {
               Our Achievements
             </h2>
             <p className="text-xl opacity-90">
-              Numbers that reflect our commitment to excellence.
+              Numbers that reflect our commitment to excellence and client satisfaction.
             </p>
           </div>
 
@@ -207,20 +239,22 @@ const About = () => {
             </h2>
             <div className="space-y-6 text-lg text-gray-600 leading-relaxed">
               <p>
-                Founded in Abu Dhabi, NM HR Consultancy began with a simple yet powerful vision: 
-                to transform the way businesses connect with talent in the UAE and across the Middle East. 
-                What started as a small recruitment firm has grown into a comprehensive HR solutions provider.
+                Founded in Abu Dhabi, NM HR Consultancy began with a vision to transform recruitment 
+                through reliable, ethical, and efficient manpower solutions. With over 30 years of 
+                expertise, we have evolved from a small recruitment firm into a comprehensive HR 
+                solutions provider.
               </p>
               <p>
-                Over the years, we have built strong relationships with leading companies across various 
-                industries, from emerging startups to established multinational corporations. Our success 
-                is measured not just in placements made, but in the lasting partnerships we've forged and 
-                the careers we've helped shape.
+                Our skilled internal team and global talent network spanning India, Philippines, Nepal, 
+                Sri Lanka, and Bangladesh have enabled us to serve 500+ satisfied customers with 582+ 
+                successful placements. We pride ourselves on delivering high-quality hiring solutions 
+                that are people-first, compliant, and results-driven.
               </p>
               <p>
-                Today, we continue to evolve and adapt to the changing needs of the modern workplace, 
-                incorporating innovative technologies and best practices to deliver superior results. 
-                Our commitment to excellence remains unchanged as we look toward the future.
+                Today, we continue to redefine recruitment by connecting businesses with the right talent 
+                that drives growth while helping professionals achieve meaningful career success. Our 
+                commitment to excellence and long-term client satisfaction remains at the heart of 
+                everything we do.
               </p>
             </div>
           </div>
@@ -234,7 +268,8 @@ const About = () => {
             Ready to Partner with Us?
           </h2>
           <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-            Let us help you achieve your business goals with our comprehensive HR and recruitment solutions.
+            Let us help you achieve your business goals with our comprehensive HR and recruitment solutions 
+            backed by 30+ years of expertise.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="gradient-blue text-white hover:opacity-90">
