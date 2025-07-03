@@ -7,30 +7,30 @@ import { Users, Globe, Building, CheckCircle, Star, Award } from 'lucide-react';
 const Index = () => {
   const stats = [
     { icon: CheckCircle, value: '582+', label: 'Successful Placements' },
-    { icon: Globe, value: '5+', label: 'Countries Served' },
-    { icon: Building, value: '500+', label: 'Satisfied Clients' },
-    { icon: Award, value: '10+', label: 'Years Experience' },
+    { icon: Users, value: '215+', label: 'Professionals Serving Clients' },
+    { icon: Building, value: '500+', label: 'Satisfied Customers' },
+    { icon: Award, value: '30+', label: 'Years of HR Expertise' },
   ];
 
   const services = [
     {
-      title: 'Staffing Solutions',
-      description: 'Permanent, temporary, and domestic staff placement services tailored to your needs.',
+      title: 'Recruitment Services',
+      description: 'End-to-end hiring from job posting to onboarding with global talent pool sourcing.',
       icon: Users,
     },
     {
-      title: 'HR Consulting',
-      description: 'Comprehensive HR solutions including compliance, audits, and employee engagement.',
+      title: 'Temporary & Permanent Staffing',
+      description: 'Flexible workforce models with skilled, screened, and job-ready candidates.',
       icon: Building,
     },
     {
-      title: 'PRO Services',
-      description: 'Complete visa processing, payroll management, and WPS services.',
+      title: 'Domestic Staff Supply',
+      description: 'Trained housemaids, nannies, cooks, drivers, and caretakers - all background-verified.',
       icon: CheckCircle,
     },
     {
-      title: 'Business Setup',
-      description: 'End-to-end business setup services for UAE market entry.',
+      title: 'HR Consulting & PRO Services',
+      description: 'Complete HR solutions including policy development, compliance, and visa processing.',
       icon: Globe,
     },
   ];
@@ -57,9 +57,13 @@ const Index = () => {
   ];
 
   const industries = [
-    'Healthcare', 'Construction', 'Technology', 'Finance', 'Hospitality', 
-    'Manufacturing', 'Education', 'Retail', 'Oil & Gas', 'Real Estate'
+    'Civil & Architecture', 'Mechanical & Electrical', 'Welding & Fabrication', 
+    'Hotel & Hospitality', 'Cleaning & Housekeeping', 'Supermarkets & Retail', 
+    'Agriculture & Plantation', 'Manufacturing & Production', 'Healthcare & Paramedical', 
+    'Security Services', 'Administration', 'Garments & Textiles', 'Heavy Equipment & Transport'
   ];
+
+  const countries = ['India', 'Philippines', 'Nepal', 'Sri Lanka', 'Bangladesh'];
 
   return (
     <div className="min-h-screen">
@@ -83,12 +87,12 @@ const Index = () => {
         <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center animate-fade-in">
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 font-playfair">
-              Your Trusted <span className="text-blue-400">Recruitment</span> & 
+              Your Trusted <span className="text-blue-400">HR Partner</span> 
               <br className="hidden sm:block" />
-              <span className="text-yellow-400"> HR Solutions</span> Partner
+              in <span className="text-yellow-400">Abu Dhabi, UAE</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto">
-              Connecting exceptional talent with outstanding opportunities across Abu Dhabi, UAE, and beyond.
+              Delivering Skilled Talent, Empowering Careers. Over 30 years of expertise in tailored recruitment and manpower solutions.
             </p>
             
             {/* Stats */}
@@ -125,7 +129,7 @@ const Index = () => {
               Our Professional Services
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Comprehensive HR and recruitment solutions designed to meet your business needs.
+              Ethical, efficient, and aligned with your business needs. We deliver high-quality hiring solutions.
             </p>
           </div>
 
@@ -163,14 +167,40 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
             {industries.map((industry, index) => (
               <div 
                 key={index} 
                 className="bg-white p-4 rounded-lg text-center hover:shadow-md transition-shadow duration-300 animate-fade-in"
                 style={{ animationDelay: `${index * 0.05}s` }}
               >
-                <span className="text-gray-700 font-medium">{industry}</span>
+                <span className="text-gray-700 font-medium text-sm">{industry}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Global Talent Access */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-playfair">
+              Global Talent Access
+            </h2>
+            <p className="text-xl text-gray-600">
+              We source qualified candidates from across multiple countries to meet your specific needs.
+            </p>
+          </div>
+
+          <div className="flex flex-wrap justify-center gap-6">
+            {countries.map((country, index) => (
+              <div 
+                key={index} 
+                className="bg-gradient-blue text-white px-6 py-3 rounded-full font-medium animate-fade-in"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                {country}
               </div>
             ))}
           </div>
@@ -178,7 +208,7 @@ const Index = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-playfair">
@@ -217,7 +247,7 @@ const Index = () => {
             Ready to Transform Your Business?
           </h2>
           <p className="text-xl mb-8 opacity-90">
-            Let us help you find the perfect talent or your next career opportunity.
+            Let us help you find the perfect talent or your next career opportunity with our 30+ years of expertise.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" variant="secondary" className="bg-white text-brand-blue hover:bg-gray-100">

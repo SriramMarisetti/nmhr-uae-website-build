@@ -6,7 +6,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { MapPin, Phone, Mail, Clock, MessageCircle } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, MessageCircle, Globe } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
 const Contact = () => {
@@ -25,7 +25,7 @@ const Contact = () => {
     {
       icon: MapPin,
       title: 'Office Location',
-      details: 'Abu Dhabi, UAE',
+      details: 'Abu Dhabi, United Arab Emirates',
       description: 'Visit our office for in-person consultations'
     },
     {
@@ -43,19 +43,26 @@ const Contact = () => {
     {
       icon: Clock,
       title: 'Business Hours',
-      details: 'Sun - Thu: 9:00 AM - 6:00 PM',
-      description: 'Friday: 9:00 AM - 1:00 PM'
+      details: 'Mon - Fri: 9:00 AM - 6:00 PM',
+      description: 'Saturday & Sunday: Closed'
     }
   ];
 
   const services = [
-    'Staffing Solutions',
-    'HR Consulting',
-    'PRO Services',
     'Recruitment Services',
-    'Business Setup',
+    'Temporary & Permanent Staffing',
+    'Domestic Staff Supply',
+    'HR Consulting',
+    'PRO & Payroll Services',
     'International Recruitment',
     'Other'
+  ];
+
+  const socialLinks = [
+    { name: 'Website', url: 'www.nmhruae.com', icon: Globe },
+    { name: 'LinkedIn', url: 'www.linkedin.com/', icon: MessageCircle },
+    { name: 'Instagram', url: 'www.instagram.com/nmhrconsultancyuae', icon: MessageCircle },
+    { name: 'Facebook', url: 'www.facebook.com/profile.php?id=61564817588160', icon: MessageCircle },
   ];
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -92,8 +99,8 @@ const Contact = () => {
               Get in <span className="text-brand-blue">Touch</span> with Us
             </h1>
             <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-              Ready to transform your business with our HR solutions? Contact us today for a consultation 
-              and discover how we can help you achieve your goals.
+              Ready to transform your business with our HR solutions? Contact NM HR Consultancy today 
+              and discover how our 30+ years of expertise can help you achieve your goals.
             </p>
           </div>
         </div>
@@ -119,7 +126,7 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Contact Form & Map */}
+      {/* Contact Form & Social Links */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -241,31 +248,37 @@ const Contact = () => {
               </Card>
             </div>
 
-            {/* Map & Additional Info */}
+            {/* Social Links & Additional Info */}
             <div className="animate-fade-in" style={{ animationDelay: '0.3s' }}>
               <h2 className="text-3xl font-bold text-gray-900 mb-6 font-playfair">
-                Visit Our Office
+                Connect with Us
               </h2>
               <p className="text-gray-600 mb-8">
-                Located in the heart of Abu Dhabi, our office is easily accessible and equipped 
-                with modern facilities for comfortable meetings and consultations.
+                Located in the heart of Abu Dhabi, our office is easily accessible. 
+                Follow us on social media for updates and industry insights.
               </p>
 
-              {/* Map Placeholder */}
-              <Card className="mb-8">
-                <CardContent className="p-0">
-                  <div className="bg-gradient-to-br from-blue-100 to-blue-200 h-64 rounded-lg flex items-center justify-center">
-                    <div className="text-center">
-                      <MapPin className="h-12 w-12 text-brand-blue mx-auto mb-4" />
-                      <p className="text-brand-blue font-semibold">Interactive Map</p>
-                      <p className="text-gray-600 text-sm">Abu Dhabi, UAE</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+              {/* Social Media Links */}
+              <div className="space-y-4 mb-8">
+                {socialLinks.map((link, index) => (
+                  <Card key={index} className="hover:shadow-md transition-shadow">
+                    <CardContent className="p-4">
+                      <div className="flex items-center space-x-4">
+                        <div className="w-10 h-10 bg-gradient-blue rounded-full flex items-center justify-center">
+                          <link.icon className="h-5 w-5 text-white" />
+                        </div>
+                        <div>
+                          <p className="font-semibold text-gray-900">{link.name}</p>
+                          <p className="text-brand-blue text-sm">{link.url}</p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
 
               {/* WhatsApp CTA */}
-              <Card className="bg-green-50 border-green-200">
+              <Card className="bg-green-50 border-green-200 mb-6">
                 <CardContent className="p-6">
                   <div className="flex items-center space-x-4">
                     <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center">
@@ -283,20 +296,16 @@ const Contact = () => {
               </Card>
 
               {/* Office Hours */}
-              <Card className="mt-6">
+              <Card>
                 <CardContent className="p-6">
                   <h3 className="text-lg font-semibold text-gray-900 mb-4">Office Hours</h3>
                   <div className="space-y-2 text-sm">
                     <div className="flex justify-between">
-                      <span className="text-gray-600">Sunday - Thursday:</span>
+                      <span className="text-gray-600">Monday - Friday:</span>
                       <span className="font-medium">9:00 AM - 6:00 PM</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-gray-600">Friday:</span>
-                      <span className="font-medium">9:00 AM - 1:00 PM</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-gray-600">Saturday:</span>
+                      <span className="text-gray-600">Saturday & Sunday:</span>
                       <span className="font-medium">Closed</span>
                     </div>
                   </div>
@@ -323,23 +332,23 @@ const Contact = () => {
             {[
               {
                 question: "What services does NM HR Consultancy offer?",
-                answer: "We provide comprehensive HR solutions including staffing, recruitment, PRO services, business setup, and HR consulting across various industries in the UAE and beyond."
+                answer: "We provide comprehensive HR solutions including recruitment services, temporary & permanent staffing, domestic staff supply, HR consulting, and PRO & payroll services across various industries."
               },
               {
                 question: "How long does the recruitment process typically take?",
-                answer: "The timeline varies depending on the position and requirements, but typically ranges from 2-4 weeks for standard positions and 4-8 weeks for senior executive roles."
+                answer: "Our 5-step process typically ranges from 2-4 weeks for standard positions. Timeline may vary based on specific requirements and the complexity of the role."
               },
               {
-                question: "Do you provide visa and immigration support?",
-                answer: "Yes, we offer complete PRO services including visa processing, Emirates ID, labor card services, and assistance with all government-related documentation."
+                question: "Which countries do you source candidates from?",
+                answer: "We have a global talent network spanning India, Philippines, Nepal, Sri Lanka, and Bangladesh, allowing us to source qualified candidates based on your specific needs."
               },
               {
-                question: "What industries do you specialize in?",
-                answer: "We serve clients across multiple industries including healthcare, construction, technology, finance, hospitality, manufacturing, education, and more."
+                question: "Do you provide post-placement support?",
+                answer: "Yes, we offer comprehensive follow-up and post-deployment support to ensure continued satisfaction and address any concerns that may arise."
               },
               {
                 question: "How can I get started with your services?",
-                answer: "Simply contact us through the form above, call us directly, or visit our office. We'll schedule a consultation to understand your needs and provide tailored solutions."
+                answer: "Simply contact us through the form above, call us at +971-54-7593444, or email recruit@nmhruae.com. We'll schedule a consultation to understand your needs."
               }
             ].map((faq, index) => (
               <Card key={index} className="animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
