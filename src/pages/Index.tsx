@@ -4,6 +4,22 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Link } from 'react-router-dom';
 import { Users, Globe, Building, CheckCircle, Star, Award } from 'lucide-react';
 
+import {
+  FaDraftingCompass,       // Architecture
+  FaCogs,                  // Mechanical & Electrical
+  FaTools,                // Welding & Fabrication
+  FaHotel,                // Hotel & Hospitality
+  FaBroom,                // Cleaning
+  FaShoppingCart,         // Retail
+  FaSeedling,             // Agriculture
+  FaIndustry,             // Manufacturing
+  FaFirstAid,             // Healthcare
+  FaShieldAlt,            // Security
+  FaClipboard,            // Administration
+  FaTshirt,               // Garments
+  FaTruckMoving           // Heavy Equipment
+} from "react-icons/fa";
+
 const Index = () => {
   const stats = [
     { icon: CheckCircle, value: '582+', label: 'Successful Placements' },
@@ -56,12 +72,60 @@ const Index = () => {
     },
   ];
 
-  const industries = [
-    'Civil & Architecture', 'Mechanical & Electrical', 'Welding & Fabrication', 
-    'Hotel & Hospitality', 'Cleaning & Housekeeping', 'Supermarkets & Retail', 
-    'Agriculture & Plantation', 'Manufacturing & Production', 'Healthcare & Paramedical', 
-    'Security Services', 'Administration', 'Garments & Textiles', 'Heavy Equipment & Transport'
-  ];
+const industries = [
+  {
+    label: 'Civil & Architecture',
+    icon: <FaDraftingCompass className="h-6 w-6 mx-auto mb-2 text-blue-500" />
+  },
+  {
+    label: 'Mechanical & Electrical',
+    icon: <FaCogs className="h-6 w-6 mx-auto mb-2 text-yellow-500" />
+  },
+  {
+    label: 'Welding & Fabrication',
+    icon: <FaTools className="h-6 w-6 mx-auto mb-2 text-red-500" />
+  },
+  {
+    label: 'Hotel & Hospitality',
+    icon: <FaHotel className="h-6 w-6 mx-auto mb-2 text-purple-500" />
+  },
+  {
+    label: 'Cleaning & Housekeeping',
+    icon: <FaBroom className="h-6 w-6 mx-auto mb-2 text-green-500" />
+  },
+  {
+    label: 'Supermarkets & Retail',
+    icon: <FaShoppingCart className="h-6 w-6 mx-auto mb-2 text-pink-500" />
+  },
+  {
+    label: 'Agriculture & Plantation',
+    icon: <FaSeedling className="h-6 w-6 mx-auto mb-2 text-lime-600" />
+  },
+  {
+    label: 'Manufacturing & Production',
+    icon: <FaIndustry className="h-6 w-6 mx-auto mb-2 text-orange-500" />
+  },
+  {
+    label: 'Healthcare & Paramedical',
+    icon: <FaFirstAid className="h-6 w-6 mx-auto mb-2 text-rose-500" />
+  },
+  {
+    label: 'Security Services',
+    icon: <FaShieldAlt className="h-6 w-6 mx-auto mb-2 text-gray-700" />
+  },
+  {
+    label: 'Administration',
+    icon: <FaClipboard className="h-6 w-6 mx-auto mb-2 text-indigo-600" />
+  },
+  {
+    label: 'Garments & Textiles',
+    icon: <FaTshirt className="h-6 w-6 mx-auto mb-2 text-yellow-600" />
+  },
+  {
+    label: 'Heavy Equipment & Transport',
+    icon: <FaTruckMoving className="h-6 w-6 mx-auto mb-2 text-gray-800" />
+  }
+];
 
   const countries = ['India', 'Philippines', 'Nepal', 'Sri Lanka', 'Bangladesh'];
 
@@ -110,9 +174,6 @@ const Index = () => {
 
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="gradient-blue text-white hover:opacity-90 transition-opacity">
-                <Link to="/contact">Start Hiring Today</Link>
-              </Button>
               <Button size="lg" variant="outline" className="border-yellow-400 text-yellow-400 bg-transparent hover:bg-yellow-400 hover:text-white">
                 <Link to="/contact">Find Your Dream Job</Link>
               </Button>
@@ -122,38 +183,57 @@ const Index = () => {
       </section>
 
       {/* Services Overview */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-playfair">
-              Our Professional Services
-            </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Ethical, efficient, and aligned with your business needs. We deliver high-quality hiring solutions.
-            </p>
-          </div>
+<section className="py-20 bg-white">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    {/* Heading */}
+    <div className="text-center mb-16">
+      <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-playfair">
+        Our Professional Services
+      </h2>
+      <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+        Ethical, efficient, and aligned with your business needs. We deliver high-quality hiring solutions.
+      </p>
+    </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {services.map((service, index) => (
-              <Card key={index} className="h-full hover:shadow-lg transition-shadow duration-300 animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
-                <CardContent className="p-6 text-center">
-                  <div className="w-16 h-16 bg-gradient-blue rounded-full flex items-center justify-center mx-auto mb-4">
-                    <service.icon className="h-8 w-8 text-white" />
-                  </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3">{service.title}</h3>
-                  <p className="text-gray-600 text-sm">{service.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+    {/* Service Cards */}
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+  {services.map((service, index) => (
+    <Card
+      key={index}
+      className="h-full hover:shadow-lg transition-shadow duration-300 animate-fade-in flex flex-col"
+      style={{ animationDelay: `${index * 0.1}s` }}
+    >
+      {/* Image on Top with No Gap */}
+      <div className="w-full h-40 overflow-hidden">
+        <img
+          src={`/assets/card${index + 1}.jpg`}
+          alt={service.title}
+          className="w-full h-full object-cover"
+        />
+      </div>
 
-          <div className="text-center mt-12">
-            <Button variant="outline" size="lg" className="border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white">
-              <Link to="/services">View All Services</Link>
-            </Button>
-          </div>
-        </div>
-      </section>
+      {/* Content Below with Padding */}
+      <CardContent className="flex-1 p-6 text-center flex flex-col justify-start">
+        <h3 className="text-xl font-semibold text-gray-900 mb-3">{service.title}</h3>
+        <p className="text-gray-600 text-sm">{service.description}</p>
+      </CardContent>
+    </Card>
+  ))}
+</div>
+
+
+    {/* CTA Button */}
+    <div className="text-center mt-12">
+      <Button
+        variant="outline"
+        size="lg"
+        className="border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white"
+      >
+        <Link to="/services">View All Services</Link>
+      </Button>
+    </div>
+  </div>
+</section>
 
       {/* Industries Served */}
       <section className="py-20 bg-gray-50">
@@ -166,46 +246,53 @@ const Index = () => {
               Specialized recruitment across diverse sectors in the UAE and beyond.
             </p>
           </div>
-
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
-            {industries.map((industry, index) => (
-              <div 
-                key={index} 
-                className="bg-white p-4 rounded-lg text-center hover:shadow-md transition-shadow duration-300 animate-fade-in"
+            {industries.map((item, index) => (
+              <div
+                key={index}
+                className="bg-white p-4 rounded-lg text-center hover:shadow-md transition-shadow duration-300 animate-fade-in border"
                 style={{ animationDelay: `${index * 0.05}s` }}
               >
-                <span className="text-gray-700 font-medium text-sm">{industry}</span>
+                {item.icon}
+                <span className="text-gray-700 font-medium text-sm">{item.label}</span>
               </div>
             ))}
           </div>
+
         </div>
       </section>
 
       {/* Global Talent Access */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-playfair">
-              Global Talent Access
-            </h2>
-            <p className="text-xl text-gray-600">
-              We source qualified candidates from across multiple countries to meet your specific needs.
-            </p>
-          </div>
+<section className="py-20 bg-white">
+  {/* Heading */}
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-10">
+    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 font-playfair">
+      Global Talent Access
+    </h2>
+  </div>
 
-          <div className="flex flex-wrap justify-center gap-6">
-            {countries.map((country, index) => (
-              <div 
-                key={index} 
-                className="bg-gradient-blue text-white px-6 py-3 rounded-full font-medium animate-fade-in"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                {country}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+  {/* Image + Text Container */}
+  <div className="md:relative flex flex-col md:flex-row items-stretch">
+    {/* Image Section */}
+    <div
+      className="bg-cover bg-no-repeat bg-right md:bg-center h-64 md:h-[700px] w-full"
+      style={{ backgroundImage: `url('/assets/global-image.jpg')` }}
+    >
+      {/* Dark overlay only for desktop */}
+      <div className="hidden md:block absolute inset-0 bg-black bg-opacity-10"></div>
+    </div>
+
+    {/* Text Section */}
+    <div className="w-full md:w-1/3 flex items-center justify-center bg-white px-6 py-8 md:absolute md:left-0 md:top-0 md:bottom-0 md:pl-10 md:bg-transparent md:text-white">
+      <p className="text-lg md:text-4xl font-medium text-black md:text-white text-center md:text-left">
+        We source qualified candidates from across multiple countries to meet your specific needs.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+
 
       {/* Testimonials */}
       <section className="py-20 bg-gray-50">
