@@ -257,7 +257,7 @@ const Services = () => {
             <Button size="lg" variant="secondary" className="bg-white text-brand-blue hover:bg-gray-100">
               <Link to="/contact">Contact Us Today</Link>
             </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-brand-blue">
+            <Button size="lg" variant="outline" className="border-white text-white bg-transparent hover:bg-white hover:text-brand-blue">
               <Link to="/business-setup">Business Setup Services</Link>
             </Button>
           </div>

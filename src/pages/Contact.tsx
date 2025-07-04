@@ -24,28 +24,47 @@ const Contact = () => {
   const contactInfo = [
     {
       icon: MapPin,
-      title: 'Office Location',
+      title: 'UAE Office',
       details: 'Abu Dhabi, United Arab Emirates',
       description: 'Visit our office for in-person consultations'
     },
     {
       icon: Phone,
-      title: 'Phone Number',
+      title: 'UAE Contact',
       details: '+971-54-7593444',
       description: 'Call us for immediate assistance'
     },
     {
       icon: Mail,
-      title: 'Email Address',
+      title: 'UAE Email',
       details: 'recruit@nmhruae.com',
       description: 'Send us your queries and requirements'
     },
+    {
+  icon: MapPin,
+  title: 'Indian Office',
+  details: 'Visakhapatnam, Andhra Pradesh',
+  description: 'Bhupathi Surya Central Mall, Dondaparthy, Railway New Colony, Visakhapatnam, 530016'
+},
+{
+  icon: Phone,
+  title: 'India Contact',
+  details: '+91 86880 53307',
+  description: 'Connect with our Indian recruitment team'
+},
+{
+  icon: Mail,
+  title: 'Indian Email',
+  details: 'hr.vizag@nmhruae.com',
+  description: 'For Indian branch recruitment and queries'
+},
     {
       icon: Clock,
       title: 'Business Hours',
       details: 'Mon - Fri: 9:00 AM - 6:00 PM',
       description: 'Saturday & Sunday: Closed'
     }
+
   ];
 
   const services = [
@@ -63,6 +82,7 @@ const Contact = () => {
     { name: 'LinkedIn', url: 'www.linkedin.com/', icon: MessageCircle },
     { name: 'Instagram', url: 'www.instagram.com/nmhrconsultancyuae', icon: MessageCircle },
     { name: 'Facebook', url: 'www.facebook.com/profile.php?id=61564817588160', icon: MessageCircle },
+    
   ];
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -99,9 +119,10 @@ const Contact = () => {
               Get in <span className="text-brand-blue">Touch</span> with Us
             </h1>
             <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-              Ready to transform your business with our HR solutions? Contact NM HR Consultancy today 
-              and discover how our 30+ years of expertise can help you achieve your goals.
-            </p>
+  Whether you're based in the UAE or India, NM HR Consultancy is ready to transform your business with 
+  top-tier HR solutions. Contact us today and leverage 30+ years of recruitment expertise.
+</p>
+
           </div>
         </div>
       </section>
@@ -114,7 +135,7 @@ const Contact = () => {
               <Card key={index} className="text-center hover:shadow-lg transition-shadow duration-300 animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
                 <CardContent className="p-6">
                   <div className="w-16 h-16 bg-gradient-blue rounded-full flex items-center justify-center mx-auto mb-4">
-                    <info.icon className="h-8 w-8 text-white" />
+                    <info.icon className="h-8 w-8 text-brand-blue" />
                   </div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">{info.title}</h3>
                   <p className="text-brand-blue font-medium mb-2">{info.details}</p>

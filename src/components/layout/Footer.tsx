@@ -8,7 +8,7 @@ export const Footer = () => {
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 rounded-lg overflow-hidden">
+              <div className="w-10 h-10 rounded-lg overflow-hidden bg-white">
                 <img
                   src="/assets/logo1.png"
                   alt="Company Logo"
@@ -16,7 +16,7 @@ export const Footer = () => {
                 />
               </div>
               <div>
-                <h3 className="text-lg font-bold">NM HR Consultancy</h3>
+                <h3 className="text-lg font-bold">NM Human Resources<br/> Consultancy</h3>
                 <p className="text-sm text-gray-400">Your Trusted HR Partner</p>
               </div>
             </div>
