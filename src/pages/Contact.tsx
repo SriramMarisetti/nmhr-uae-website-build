@@ -80,7 +80,7 @@ const Contact = () => {
   const socialLinks = [
     { name: 'Website', url: 'www.nmhruae.com', icon: Globe },
     { name: 'LinkedIn', url: 'www.linkedin.com/', icon: MessageCircle },
-    { name: 'Instagram', url: 'www.instagram.com/nmhrconsultancyuae', icon: MessageCircle },
+    { name: 'Instagram', url: 'https://www.instagram.com/nmhrconsultancyuae/', icon: MessageCircle },
     { name: 'Facebook', url: 'www.facebook.com/profile.php?id=61564817588160', icon: MessageCircle },
     
   ];

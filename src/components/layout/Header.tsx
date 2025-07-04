@@ -96,21 +96,21 @@ export const Header = () => {
           {/* Social Media Icons */}
           <div className="hidden lg:flex items-center space-x-4">
             {/* LinkedIn */}
-            <a href="#" className="text-gray-600 hover:text-brand-blue transition-colors" aria-label="LinkedIn">
+            <a href="#" className="text-gray-600 hover:text-brand-blue transition-colors" target='_blank' aria-label="LinkedIn">
               <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
               </svg>
             </a>
 
             {/* Instagram */}
-          <a href="#" className="text-gray-600 hover:text-pink-500 transition-colors" aria-label="Instagram">
+          <a href="https://www.instagram.com/nmhrconsultancyuae/" className="text-gray-600 hover:text-pink-500 transition-colors" target='_blank' aria-label="Instagram">
             <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
               <path d="M7 2C4.239 2 2 4.239 2 7v10c0 2.761 2.239 5 5 5h10c2.761 0 5-2.239 5-5V7c0-2.761-2.239-5-5-5H7zm10 2a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3h10zm-5 3a5 5 0 1 0 .001 10.001A5 5 0 0 0 12 7zm0 2a3 3 0 1 1-.001 6.001A3 3 0 0 1 12 9zm4.5-2a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z"/>
             </svg>
           </a>
 
             {/* Facebook */}
-            <a href="#" className="text-gray-600 hover:text-brand-blue transition-colors" aria-label="Facebook">
+            <a href="#" className="text-gray-600 hover:text-brand-blue transition-colors" target='_blank' aria-label="Facebook">
               <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M22.676 0H1.326C.593 0 0 .593 0 1.326v21.348C0 23.407.593 24 1.326 24h11.495v-9.294H9.691V11.01h3.13V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.466.099 2.797.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.312h3.587l-.467 3.696h-3.12V24h6.116C23.407 24 24 23.407 24 22.674V1.326C24 .593 23.407 0 22.676 0"/>
               </svg>
@@ -167,21 +167,21 @@ export const Header = () => {
             {/* Mobile Social Icons */}
             <div className="flex justify-center space-x-6 mt-6 pt-4 border-t">
             {/* LinkedIn */}
-            <a href="#" className="text-gray-600 hover:text-brand-blue transition-colors" aria-label="LinkedIn">
+            <a href="#" className="text-gray-600 hover:text-brand-blue transition-colors" target='_blank' aria-label="LinkedIn">
               <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
               </svg>
             </a>
 
             {/* Instagram */}
-          <a href="#" className="text-gray-600 hover:text-pink-500 transition-colors" aria-label="Instagram">
+          <a href="https://www.instagram.com/nmhrconsultancyuae/" className="text-gray-600 hover:text-pink-500 transition-colors" target='_blank' aria-label="Instagram">
             <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
               <path d="M7 2C4.239 2 2 4.239 2 7v10c0 2.761 2.239 5 5 5h10c2.761 0 5-2.239 5-5V7c0-2.761-2.239-5-5-5H7zm10 2a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3h10zm-5 3a5 5 0 1 0 .001 10.001A5 5 0 0 0 12 7zm0 2a3 3 0 1 1-.001 6.001A3 3 0 0 1 12 9zm4.5-2a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z"/>
             </svg>
           </a>
 
             {/* Facebook */}
-            <a href="#" className="text-gray-600 hover:text-brand-blue transition-colors" aria-label="Facebook">
+            <a href="#" className="text-gray-600 hover:text-brand-blue transition-colors" target='_blank' aria-label="Facebook">
               <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M22.676 0H1.326C.593 0 0 .593 0 1.326v21.348C0 23.407.593 24 1.326 24h11.495v-9.294H9.691V11.01h3.13V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.466.099 2.797.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.312h3.587l-.467 3.696h-3.12V24h6.116C23.407 24 24 23.407 24 22.674V1.326C24 .593 23.407 0 22.676 0"/>
               </svg>
