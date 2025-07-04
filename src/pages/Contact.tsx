@@ -16,7 +16,7 @@ const Contact = () => {
     email: '',
     phone: '',
     company: '',
-    subject: '',
+    resume: null as File | null,
     message: '',
     service: ''
   });
@@ -96,7 +96,7 @@ const Contact = () => {
       email: '',
       phone: '',
       company: '',
-      subject: '',
+      resume: null as File | null,
       message: '',
       service: ''
     });
@@ -112,20 +112,27 @@ const Contact = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="gradient-bg py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center animate-fade-in">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 font-playfair">
-              Get in <span className="text-brand-blue">Touch</span> with Us
-            </h1>
-            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-  Whether you're based in the UAE or India, NM HR Consultancy is ready to transform your business with 
-  top-tier HR solutions. Contact us today and leverage 30+ years of recruitment expertise.
-</p>
+<section
+  className="relative py-20 bg-cover bg-center bg-no-repeat"
+  style={{
+    backgroundImage: `url('https://rfsonshr.com/wp-content/uploads/2023/10/Rfsons-Meet-the-team.jpg-jpg.webp')`,
+  }}
+>
+  {/* Dark gradient overlay */}
+  <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60"></div>
 
-          </div>
-        </div>
-      </section>
+  {/* Content on top of overlay */}
+  <div className="relative z-10 text-center text-white px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <h1 className="text-4xl md:text-5xl font-bold mb-6 font-playfair">
+      Get in <span className="text-yellow-400">Touch</span> with Us
+    </h1>
+    <p className="text-xl max-w-3xl mx-auto">
+      Whether you're based in the UAE or India, NM HR Consultancy is ready to transform your business with 
+      top-tier HR solutions. Contact us today and leverage 30+ years of recruitment expertise.
+    </p>
+  </div>
+</section>
+
 
       {/* Contact Information */}
       <section className="py-20 bg-white">
@@ -233,18 +240,28 @@ const Contact = () => {
                           </SelectContent>
                         </Select>
                       </div>
-                      <div>
-                        <Label htmlFor="subject">Subject *</Label>
-                        <Input
-                          id="subject"
-                          name="subject"
-                          type="text"
-                          required
-                          value={formData.subject}
-                          onChange={handleInputChange}
-                          className="mt-1"
-                        />
-                      </div>
+                    <div>
+                      <Label htmlFor="resume">Upload Resume *</Label>
+                      <Input
+                        id="resume"
+                        name="resume"
+                        type="file"
+                        required
+                        accept=".pdf,.doc,.docx"
+                        onChange={(e) =>
+                          setFormData((prev) => ({
+                            ...prev,
+                            resume: e.target.files ? e.target.files[0] : null,
+                          }))
+                        }
+                        className="mt-1"
+                      />
+                      {formData.resume && (
+                        <p className="text-sm text-gray-600 mt-2">
+                          Selected file: <span className="font-medium">{formData.resume.name}</span>
+                        </p>
+                      )}
+                    </div>
                     </div>
 
                     <div>

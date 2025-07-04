@@ -24,7 +24,6 @@ export const Header = () => {
         { name: 'HR Consulting', path: '/services#hr-consulting' },
         { name: 'PRO Services', path: '/services#pro-services' },
         { name: 'Recruitment Services', path: '/services#recruitment' },
-        { name: 'Business Setup', path: '/business-setup' },
       ]
     },
     { name: 'Blog', path: '/blog' },
@@ -43,8 +42,8 @@ export const Header = () => {
               className="w-24 h-24 object-contain rounded-lg"
             />
             <div>
-              <h1 className="text-xl font-bold text-gray-900">NM Human<br/> Resources Consultancy</h1>
-              <p className="text-xs text-gray-600">Your Trusted HR Partner</p>
+              <h1 className="text-xl font-bold text-gray-900">NM Human Resources</h1>
+              <p className="text-xs text-gray-600">Consultancy</p>
             </div>
           </Link>
 

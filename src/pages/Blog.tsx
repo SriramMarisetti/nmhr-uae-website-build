@@ -4,8 +4,21 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Link } from 'react-router-dom';
 import { Calendar, User, Clock, ArrowRight } from 'lucide-react';
+import { useState } from 'react';
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+  DialogClose,
+} from '@/components/ui/dialog';
+
 
 const Blog = () => {
+  const [selectedPost, setSelectedPost] = useState(null);
+const [isDialogOpen, setIsDialogOpen] = useState(false);
+
   const blogPosts = [
     {
       id: 1,
@@ -26,7 +39,7 @@ const Blog = () => {
       author: 'Mohammed Ali',
       date: '2024-01-10',
       readTime: '6 min read',
-      image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&h=400&fit=crop&crop=entropy&cs=tinysrgb'
+      image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&h=900&fit=crop&crop=entropy&cs=tinysrgb'
     },
     {
       id: 3,
@@ -46,7 +59,7 @@ const Blog = () => {
       author: 'Ahmed Al-Mansouri',
       date: '2024-01-05',
       readTime: '5 min read',
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=400&fit=crop&crop=entropy&cs=tinysrgb'
+      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=900&fit=crop&crop=entropy&cs=tinysrgb'
     },
     {
       id: 5,
@@ -86,19 +99,27 @@ const Blog = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="gradient-bg py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center animate-fade-in">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 font-playfair">
-              HR Insights & <span className="text-brand-blue">Career Advice</span>
-            </h1>
-            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-              Stay updated with the latest trends in HR, recruitment, and career development. 
-              Expert insights to help you navigate the professional landscape.
-            </p>
-          </div>
-        </div>
-      </section>
+<section
+  className="relative py-20 bg-cover bg-center bg-no-repeat"
+  style={{
+    backgroundImage: `url('https://rfsonshr.com/wp-content/uploads/2023/10/Rfsons-Meet-the-team.jpg-jpg.webp')`,
+  }}
+>
+  {/* Dark gradient overlay */}
+  <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60"></div>
+
+  {/* Content on top of overlay */}
+  <div className="relative z-10 text-center text-white px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <h1 className="text-4xl md:text-5xl font-bold mb-6 font-playfair">
+      HR Insights & <span className="text-yellow-400">Career Advice</span>
+    </h1>
+    <p className="text-xl max-w-3xl mx-auto">
+      Stay updated with the latest trends in HR, recruitment, and career development. 
+      Expert insights to help you navigate the professional landscape.
+    </p>
+  </div>
+</section>
+
 
       {/* Categories Filter */}
       <section className="py-8 bg-white border-b">
@@ -168,9 +189,16 @@ const Blog = () => {
                     </div>
                   </div>
                   
-                  <Button className="gradient-blue text-white hover:opacity-90">
-                    Read Article <ArrowRight className="h-4 w-4 ml-2" />
-                  </Button>
+<Button
+  variant="outline"
+  className=" border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white"
+  onClick={() => {
+    setSelectedPost(featuredPost);
+    setIsDialogOpen(true);
+  }}
+>
+  Read Article
+</Button>
                 </div>
               </div>
             </Card>
@@ -197,7 +225,7 @@ const Blog = () => {
                   <img 
                     src={post.image} 
                     alt={post.title}
-                    className="w-full h-48 object-cover"
+                    className="w-80 h-80 object-cover"
                   />
                   <div className="absolute top-4 left-4">
                     <Badge className="bg-brand-blue text-white">{post.category}</Badge>
@@ -228,22 +256,51 @@ const Blog = () => {
                     </div>
                   </div>
                   
-                  <Button variant="outline" className="w-full border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white">
-                    Read More
-                  </Button>
+<Button
+  variant="outline"
+  className="w-full border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white"
+  onClick={() => {
+    setSelectedPost(post);
+    setIsDialogOpen(true);
+  }}
+>
+  Read More
+</Button>
+
+
                 </CardContent>
               </Card>
             ))}
           </div>
-
-          {/* Load More Button */}
-          <div className="text-center mt-12">
-            <Button variant="outline" size="lg" className="border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white">
-              Load More Articles
-            </Button>
-          </div>
         </div>
       </section>
+
+{selectedPost && (
+  <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+    <DialogContent className="max-w-2xl p-6">
+      <DialogHeader>
+        <DialogTitle className="text-2xl font-playfair mb-2">
+          {selectedPost.title}
+        </DialogTitle>
+        <DialogDescription className="text-sm text-gray-500">
+          By {selectedPost.author} on {new Date(selectedPost.date).toLocaleDateString()} | {selectedPost.readTime}
+        </DialogDescription>
+      </DialogHeader>
+
+      <img
+        src={selectedPost.image}
+        alt={selectedPost.title}
+        className="w-full h-64 object-cover rounded-md my-4"
+      />
+
+      <p className="text-gray-700 text-base leading-relaxed">
+        {selectedPost.excerpt}
+        {/* Replace with full article content when available */}
+      </p>
+    </DialogContent>
+  </Dialog>
+)}
+
 
       {/* Newsletter Signup */}
       <section className="py-20 gradient-blue text-white">

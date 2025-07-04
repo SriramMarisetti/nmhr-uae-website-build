@@ -55,7 +55,7 @@ const About = () => {
     { number: '582+', label: 'Successful Placements' },
     { number: '215+', label: 'Professionals Serving Clients' },
     { number: '500+', label: 'Satisfied Customers' },
-    { number: '30+', label: 'Years of HR Expertise' },
+    { number: '13+', label: 'Years of HR Expertise' },
   ];
 
   const process = [
@@ -69,86 +69,129 @@ const About = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="gradient-bg py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center animate-fade-in">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 font-playfair">
-              About <span className="text-brand-blue">NM HR Consultancy</span>
-            </h1>
-            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-              Your trusted HR partner in Abu Dhabi, UAE. With over 30 years of expertise, we specialize in 
-              providing tailored recruitment and manpower solutions across diverse sectors.
-            </p>
-          </div>
-        </div>
-      </section>
+<section
+  className="relative py-20 bg-cover bg-center bg-no-repeat"
+  style={{
+    backgroundImage: `url('https://rfsonshr.com/wp-content/uploads/2023/10/Rfsons-Meet-the-team.jpg-jpg.webp')`,
+  }}
+>
+  {/* Dark gradient overlay */}
+  <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60"></div>
+
+  {/* Content on top of overlay */}
+  <div className="relative z-10 text-center text-white px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <h1 className="text-4xl md:text-5xl font-bold mb-6 font-playfair">
+      About <span className="text-yellow-400">NM HR Consultancy</span>
+    </h1>
+    <p className="text-xl max-w-3xl mx-auto">
+      Your trusted HR partner in Abu Dhabi, UAE. With over 30 years of expertise, we specialize in 
+      providing tailored recruitment and manpower solutions across diverse sectors.
+    </p>
+  </div>
+</section>
+
+
+
 
       {/* Mission & Vision */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <Card className="animate-slide-in">
-              <CardContent className="p-8">
-                <div className="flex items-center mb-6">
-                  <div className="w-12 h-12 bg-gradient-blue rounded-full flex items-center justify-center mr-4">
-                    <Target className="h-6 w-6 text-white" />
-                  </div>
-                  <h2 className="text-2xl font-bold text-gray-900 font-playfair">Our Mission</h2>
-                </div>
-                <p className="text-gray-600 leading-relaxed">
-                  To empower clients with skilled and dependable human resources, while enabling job seekers 
-                  to achieve professional growth and success. Our solutions are people-first, compliant, 
-                  and results-driven, connecting businesses with the right talent that drives growth.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="animate-slide-in" style={{ animationDelay: '0.2s' }}>
-              <CardContent className="p-8">
-                <div className="flex items-center mb-6">
-                  <div className="w-12 h-12 bg-gradient-gold rounded-full flex items-center justify-center mr-4">
-                    <Eye className="h-6 w-6 text-white" />
-                  </div>
-                  <h2 className="text-2xl font-bold text-gray-900 font-playfair">Our Vision</h2>
-                </div>
-                <p className="text-gray-600 leading-relaxed">
-                  To redefine recruitment by offering reliable, ethical, and efficient manpower solutions. 
-                  We aim to be the leading HR consultancy in the Middle East, connecting businesses with 
-                  the right talent while helping professionals build meaningful careers.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
+<section className="py-20 bg-white">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+      
+      {/* Mission Card */}
+      <Card className="animate-slide-in overflow-hidden transform transition duration-300 hover:-translate-y-1 hover:shadow-xl group">
+        <div className="w-full h-56 overflow-hidden">
+          <img
+            src="/assets/our-mission.jpg"
+            alt="Our Mission"
+            className="w-full h-full object-cover transform transition-transform duration-300 group-hover:scale-105"
+          />
         </div>
-      </section>
+        <CardContent className="p-8 transition-colors duration-300 group-hover:bg-gray-50">
+          <div className="flex items-center mb-6">
+            <div className="w-12 h-12 bg-gradient-blue rounded-full flex items-center justify-center mr-4 transition-transform duration-300 group-hover:rotate-6">
+              <Target className="h-6 w-6 text-white" />
+            </div>
+            <h2 className="text-2xl font-bold text-gray-900 font-playfair group-hover:text-brand-blue transition-colors duration-300">
+              Our Mission
+            </h2>
+          </div>
+          <p className="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
+            To empower clients with skilled and dependable human resources, while enabling job seekers 
+            to achieve professional growth and success. Our solutions are people-first, compliant, 
+            and results-driven, connecting businesses with the right talent that drives growth.
+          </p>
+        </CardContent>
+      </Card>
+
+      {/* Vision Card */}
+      <Card className="animate-slide-in overflow-hidden transform transition duration-300 hover:-translate-y-1 hover:shadow-xl group" style={{ animationDelay: '0.2s' }}>
+        <div className="w-full h-56 overflow-hidden">
+          <img
+            src="/assets/our-vision.jpg"
+            alt="Our Vision"
+            className="w-full h-full object-cover transform transition-transform duration-300 group-hover:scale-105"
+          />
+        </div>
+        <CardContent className="p-8 transition-colors duration-300 group-hover:bg-gray-50">
+          <div className="flex items-center mb-6">
+            <div className="w-12 h-12 bg-gradient-gold rounded-full flex items-center justify-center mr-4 transition-transform duration-300 group-hover:rotate-6">
+              <Eye className="h-6 w-6 text-white" />
+            </div>
+            <h2 className="text-2xl font-bold text-gray-900 font-playfair group-hover:text-brand-gold transition-colors duration-300">
+              Our Vision
+            </h2>
+          </div>
+          <p className="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
+            To redefine recruitment by offering reliable, ethical, and efficient manpower solutions. 
+            We aim to be the leading HR consultancy in the Middle East, connecting businesses with 
+            the right talent while helping professionals build meaningful careers.
+          </p>
+        </CardContent>
+      </Card>
+
+    </div>
+  </div>
+</section>
 
       {/* Company Values */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-playfair">
-              Our Core Values
-            </h2>
-            <p className="text-xl text-gray-600">
-              The principles that guide everything we do for over 30 years.
-            </p>
+<section className="py-20 bg-gray-50">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="text-center mb-16">
+      <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-playfair">
+        Our Core Values
+      </h2>
+      <p className="text-xl text-gray-600">
+        The principles that guide everything we do for over 13 years.
+      </p>
+    </div>
+
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {values.map((value, index) => (
+        <Card
+          key={index}
+          className="text-center h-full overflow-hidden animate-fade-in"
+          style={{ animationDelay: `${index * 0.1}s` }}
+        >
+          {/* Image section without gap */}
+          <div className="w-full h-56 overflow-hidden">
+            <img
+              src={`/assets/core${index + 1}.jpg`}
+              alt={value.title}
+              className="w-full h-full object-cover"
+            />
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {values.map((value, index) => (
-              <Card key={index} className="text-center h-full animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
-                <CardContent className="p-6">
-                  <div className="w-16 h-16 bg-gradient-blue rounded-full flex items-center justify-center mx-auto mb-4">
-                    <value.icon className="h-8 w-8 text-white" />
-                  </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3">{value.title}</h3>
-                  <p className="text-gray-600 text-sm">{value.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+          <CardContent className="p-4">
+            <h3 className="text-xl font-semibold text-gray-900 mb-3">{value.title}</h3>
+            <p className="text-gray-600 text-sm">{value.description}</p>
+          </CardContent>
+        </Card>
+      ))}
+    </div>
+  </div>
+</section>
+
 
       {/* Why Choose Us */}
       <section className="py-20 bg-white">
@@ -167,7 +210,7 @@ const About = () => {
             {whyChooseUs.map((item, index) => (
               <Card key={index} className="hover:shadow-lg transition-shadow duration-300 animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
                 <CardContent className="p-6 flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-gradient-gold rounded-full flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 bg-brand-gold rounded-full flex items-center justify-center flex-shrink-0">
                     <item.icon className="h-6 w-6 text-white" />
                   </div>
                   <div>
@@ -196,7 +239,7 @@ const About = () => {
           <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
             {process.map((phase, index) => (
               <div key={index} className="text-center animate-fade-in" style={{ animationDelay: `${index * 0.2}s` }}>
-                <div className="w-16 h-16 bg-gradient-blue rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-brand-blue rounded-full flex items-center justify-center mx-auto mb-4">
                   <span className="text-white font-bold text-xl">{index + 1}</span>
                 </div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">{phase.step}</h3>
@@ -240,7 +283,7 @@ const About = () => {
             <div className="space-y-6 text-lg text-gray-600 leading-relaxed">
               <p>
                 Founded in Abu Dhabi, NM HR Consultancy began with a vision to transform recruitment 
-                through reliable, ethical, and efficient manpower solutions. With over 30 years of 
+                through reliable, ethical, and efficient manpower solutions. With over 13 years of 
                 expertise, we have evolved from a small recruitment firm into a comprehensive HR 
                 solutions provider.
               </p>

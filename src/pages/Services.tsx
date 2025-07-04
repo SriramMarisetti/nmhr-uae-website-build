@@ -3,8 +3,23 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { Users, Building, FileText, Search, Globe, CheckCircle, Clock, Shield } from 'lucide-react';
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
 const Services = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const element = document.querySelector(location.hash);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 100); // Delay ensures DOM is ready
+      }
+    }
+  }, [location]);
+
   const mainServices = [
     {
       id: 'staffing',
@@ -114,76 +129,95 @@ const Services = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="gradient-bg py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center animate-fade-in">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 font-playfair">
-              Our <span className="text-brand-blue">Professional Services</span>
-            </h1>
-            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-              Comprehensive HR and recruitment solutions designed to drive your business success. 
-              From staffing to compliance, we've got you covered.
-            </p>
-          </div>
-        </div>
-      </section>
+<section
+  className="relative py-20 bg-cover bg-center bg-no-repeat"
+  style={{
+    backgroundImage: `url('https://rfsonshr.com/wp-content/uploads/2023/10/Rfsons-Meet-the-team.jpg-jpg.webp')`,
+  }}
+>
+  {/* Dark gradient overlay */}
+  <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60"></div>
+
+  {/* Content on top of overlay */}
+  <div className="relative z-10 text-center text-white px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <h1 className="text-4xl md:text-5xl font-bold mb-6 font-playfair">
+      Our <span className="text-yellow-400">Professional Services</span>
+    </h1>
+    <p className="text-xl max-w-3xl mx-auto">
+      Comprehensive HR and recruitment solutions designed to drive your business success.
+      From staffing to compliance, we've got you covered.
+    </p>
+  </div>
+</section>
+
 
       {/* Main Services */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-20">
-            {mainServices.map((service, index) => (
-              <div key={service.id} id={service.id} className={`flex flex-col ${index % 2 === 1 ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center gap-12`}>
-                <div className="flex-1 animate-slide-in">
-                  <div className="flex items-center mb-6">
-                    <div className="w-16 h-16 bg-gradient-blue rounded-full flex items-center justify-center mr-4">
-                      <service.icon className="h-8 w-8 text-white" />
-                    </div>
-                    <h2 className="text-3xl font-bold text-gray-900 font-playfair">{service.title}</h2>
-                  </div>
-                  <p className="text-lg text-gray-600 mb-6">{service.description}</p>
-                  
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                      <h3 className="text-xl font-semibold text-gray-900 mb-3">Services Include:</h3>
-                      <ul className="space-y-2">
-                        {service.features.map((feature, idx) => (
-                          <li key={idx} className="flex items-center text-gray-600">
-                            <CheckCircle className="h-4 w-4 text-brand-blue mr-2 flex-shrink-0" />
-                            {feature}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                    
-                    <div>
-                      <h3 className="text-xl font-semibold text-gray-900 mb-3">Key Benefits:</h3>
-                      <ul className="space-y-2">
-                        {service.benefits.map((benefit, idx) => (
-                          <li key={idx} className="flex items-center text-gray-600">
-                            <CheckCircle className="h-4 w-4 text-brand-gold mr-2 flex-shrink-0" />
-                            {benefit}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="flex-1 animate-fade-in" style={{ animationDelay: '0.3s' }}>
-                  <Card className="h-full">
-                    <CardContent className="p-8">
-                      <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg p-6 h-64 flex items-center justify-center">
-                        <service.icon className="h-24 w-24 text-brand-blue opacity-20" />
-                      </div>
-                    </CardContent>
-                  </Card>
-                </div>
+<section className="py-20 bg-white">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="space-y-20">
+      {mainServices.map((service, index) => (
+        <div
+          key={service.id}
+          id={service.id}
+          className={`flex flex-col ${
+            index % 2 === 1 ? 'lg:flex-row-reverse' : 'lg:flex-row'
+          } items-center gap-12`}
+        >
+          {/* Text Content */}
+          <div className="flex-1 animate-slide-in">
+            <div className="flex items-center mb-6">
+              <div className="w-16 h-16 bg-gradient-blue rounded-full flex items-center justify-center mr-4">
+                <service.icon className="h-8 w-8 text-black" />
               </div>
-            ))}
+              <h2 className="text-3xl font-bold text-gray-900 font-playfair">{service.title}</h2>
+            </div>
+            <p className="text-lg text-gray-600 mb-6">{service.description}</p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">Services Include:</h3>
+                <ul className="space-y-2">
+                  {service.features.map((feature, idx) => (
+                    <li key={idx} className="flex items-center text-gray-600">
+                      <CheckCircle className="h-4 w-4 text-brand-blue mr-2 flex-shrink-0" />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">Key Benefits:</h3>
+                <ul className="space-y-2">
+                  {service.benefits.map((benefit, idx) => (
+                    <li key={idx} className="flex items-center text-gray-600">
+                      <CheckCircle className="h-4 w-4 text-brand-gold mr-2 flex-shrink-0" />
+                      {benefit}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* Image Card */}
+          <div className="flex-1 animate-fade-in" style={{ animationDelay: '0.3s' }}>
+            <Card className="h-full overflow-hidden">
+              <CardContent className="p-0">
+                <img
+                  src={`/assets/service_card${index + 1}.jpg`}
+                  alt={service.title}
+                  className="w-full h-full object-cover"
+                />
+              </CardContent>
+            </Card>
           </div>
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
+
 
       {/* Additional Services */}
       <section className="py-20 bg-gray-50">
@@ -201,7 +235,7 @@ const Services = () => {
             {additionalServices.map((service, index) => (
               <Card key={index} className="h-full hover:shadow-lg transition-shadow duration-300 animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
                 <CardContent className="p-6 text-center">
-                  <div className="w-16 h-16 bg-gradient-gold rounded-full flex items-center justify-center mx-auto mb-4">
+                  <div className="w-16 h-16 bg-brand-blue-light rounded-full flex items-center justify-center mx-auto mb-4">
                     <service.icon className="h-8 w-8 text-white" />
                   </div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-3">{service.title}</h3>
@@ -233,7 +267,7 @@ const Services = () => {
               { step: '04', title: 'Follow-up', description: 'Ongoing support and continuous improvement' }
             ].map((phase, index) => (
               <div key={index} className="text-center animate-fade-in" style={{ animationDelay: `${index * 0.2}s` }}>
-                <div className="w-16 h-16 bg-gradient-blue rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center mx-auto mb-4">
                   <span className="text-white font-bold text-xl">{phase.step}</span>
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">{phase.title}</h3>
@@ -256,9 +290,6 @@ const Services = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" variant="secondary" className="bg-white text-brand-blue hover:bg-gray-100">
               <Link to="/contact">Contact Us Today</Link>
-            </Button>
-            <Button size="lg" variant="outline" className="border-white text-white bg-transparent hover:bg-white hover:text-brand-blue">
-              <Link to="/business-setup">Business Setup Services</Link>
             </Button>
           </div>
         </div>

@@ -156,7 +156,7 @@ const industries = [
               in <span className="text-yellow-400">Abu Dhabi, UAE</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto">
-              Delivering Skilled Talent, Empowering Careers. Over 30 years of expertise in tailored recruitment and manpower solutions.
+              Delivering Skilled Talent, Empowering Careers. Over 13 years of expertise in tailored recruitment and manpower solutions.
             </p>
             
             {/* Stats */}
