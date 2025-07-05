@@ -339,15 +339,14 @@ const Contact = () => {
                       <h3 className="text-lg font-semibold text-gray-900">Quick Support via WhatsApp</h3>
                       <p className="text-gray-600 text-sm">Get instant answers to your questions</p>
                     </div>
-<Button
-  className="bg-green-500 hover:bg-green-600 text-white"
-  onClick={() => {
-    window.open("https://wa.me/971564039813?text=Hi%2C%20I'm%20looking%20for%20opportunities", "_blank");
-  }}
->
-  Chat Now
-</Button>
-
+                      <Button
+                        className="bg-green-500 hover:bg-green-600 text-white"
+                        onClick={() => {
+                          window.open("https://wa.me/971564039813?text=Hi%2C%20I'm%20looking%20for%20opportunities", "_blank");
+                        }}
+                      >
+                        Chat Now
+                      </Button>
                   </div>
                 </CardContent>
               </Card>
@@ -374,50 +373,46 @@ const Contact = () => {
       </section>
 
 
-<section className="py-20 bg-white">
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div className="text-center mb-12">
-      <h2 className="text-3xl md:text-4xl font-bold text-gray-900 font-playfair mb-4">
-        Our Office Locations
-      </h2>
-      <p className="text-lg text-gray-600">
-        Visit us in the UAE or India — we’re here to help you grow.
-      </p>
-    </div>
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 font-playfair mb-4">
+              Our Office Locations
+            </h2>
+            <p className="text-lg text-gray-600">
+              Visit us in the UAE or India — we’re here to help you grow.
+            </p>
+          </div>
 
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-      {/* India Office Map */}
-      <div className="w-full h-[450px] shadow-md rounded-lg overflow-hidden">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6472.477355732037!2d83.29740022859333!3d17.726375970045865!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a3943240631685d%3A0x67c4871ce095afb1!2sBhupathi%20Surya%20Central%20Mall!5e0!3m2!1sen!2sin!4v1751702120108!5m2!1sen!2sin"
-          width="100%"
-          height="100%"
-          style={{ border: 0 }}
-          allowFullScreen={true}
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-        ></iframe>
-      </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* India Office Map */}
+            <div className="w-full h-[450px] shadow-md rounded-lg overflow-hidden">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6472.477355732037!2d83.29740022859333!3d17.726375970045865!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a3943240631685d%3A0x67c4871ce095afb1!2sBhupathi%20Surya%20Central%20Mall!5e0!3m2!1sen!2sin!4v1751702120108!5m2!1sen!2sin"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen={true}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
 
-      {/* Dubai Office Map */}
-      <div className="w-full h-[450px] shadow-md rounded-lg overflow-hidden">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d79652.8337235643!2d54.341780105531726!3d24.486738747905008!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8076d1a634b0e363%3A0x6d625b25c99e27c2!2sNM%20HUMAN%20RESOURCES%20CONSULTANCY!5e0!3m2!1sen!2sin!4v1751702070129!5m2!1sen!2sin"
-          width="100%"
-          height="100%"
-          style={{ border: 0 }}
-          allowFullScreen={true}
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-        ></iframe>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
-
+            {/* Dubai Office Map */}
+            <div className="w-full h-[450px] shadow-md rounded-lg overflow-hidden">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d79652.8337235643!2d54.341780105531726!3d24.486738747905008!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8076d1a634b0e363%3A0x6d625b25c99e27c2!2sNM%20HUMAN%20RESOURCES%20CONSULTANCY!5e0!3m2!1sen!2sin!4v1751702070129!5m2!1sen!2sin"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen={true}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </section>
       {/* FAQ Section */}
       <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
