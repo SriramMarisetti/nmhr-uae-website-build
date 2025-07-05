@@ -33,13 +33,13 @@ export const Header = () => {
   return (
     <header className="bg-white shadow-lg sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-4">
+        <div className="flex justify-between items-center">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
             <img
               src="/assets/logo1.png"
               alt="NM HR Consultancy Logo"
-              className="w-24 h-24 object-contain rounded-lg"
+              className="w-28 h-28 object-contain rounded-lg"
             />
             <div>
               <h1 className="text-xl font-bold text-gray-900">NM Human Resources</h1>
