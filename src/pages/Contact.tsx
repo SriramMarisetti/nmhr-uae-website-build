@@ -80,8 +80,8 @@ const Contact = () => {
   const socialLinks = [
     { name: 'Website', url: 'www.nmhruae.com', icon: Globe },
     { name: 'LinkedIn', url: 'www.linkedin.com/', icon: MessageCircle },
-    { name: 'Instagram', url: 'https://www.instagram.com/nmhrconsultancyuae/', icon: MessageCircle },
-    { name: 'Facebook', url: 'www.facebook.com/profile.php?id=61564817588160', icon: MessageCircle },
+    { name: 'Instagram', url: 'www.instagram.com/nmhrconsultancyuae', icon: MessageCircle },
+    { name: 'Facebook', url: 'www.facebook.com/profile.php?id=61575714767656', icon: MessageCircle },
     
   ];
 
@@ -297,23 +297,36 @@ const Contact = () => {
               </p>
 
               {/* Social Media Links */}
-              <div className="space-y-4 mb-8">
-                {socialLinks.map((link, index) => (
-                  <Card key={index} className="hover:shadow-md transition-shadow">
-                    <CardContent className="p-4">
-                      <div className="flex items-center space-x-4">
-                        <div className="w-10 h-10 bg-gradient-blue rounded-full flex items-center justify-center">
-                          <link.icon className="h-5 w-5 text-white" />
-                        </div>
-                        <div>
-                          <p className="font-semibold text-gray-900">{link.name}</p>
-                          <p className="text-brand-blue text-sm">{link.url}</p>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                ))}
+<div className="space-y-4 mb-8">
+  {socialLinks.map((link, index) => {
+    const secureUrl = link.url.startsWith("http") ? link.url : `https://${link.url}`;
+    const displayUrl = link.url.replace(/^https?:\/\//, '');
+
+    return (
+      <a
+        key={index}
+        href={secureUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="block"
+      >
+        <Card className="hover:shadow-md transition-shadow cursor-pointer">
+          <CardContent className="p-4">
+            <div className="flex items-center space-x-4">
+              <div className="w-10 h-10 bg-brand-blue rounded-full flex items-center justify-center">
+                <link.icon className="h-5 w-5 text-white" />
               </div>
+              <div>
+                <p className="font-semibold text-gray-900">{link.name}</p>
+                <p className="text-brand-blue text-sm break-all">{displayUrl}</p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+      </a>
+    );
+  })}
+</div>
 
               {/* WhatsApp CTA */}
               <Card className="bg-green-50 border-green-200 mb-6">
@@ -326,9 +339,15 @@ const Contact = () => {
                       <h3 className="text-lg font-semibold text-gray-900">Quick Support via WhatsApp</h3>
                       <p className="text-gray-600 text-sm">Get instant answers to your questions</p>
                     </div>
-                    <Button className="bg-green-500 hover:bg-green-600 text-white">
-                      Chat Now
-                    </Button>
+<Button
+  className="bg-green-500 hover:bg-green-600 text-white"
+  onClick={() => {
+    window.open("https://wa.me/971564039813?text=Hi%2C%20I'm%20looking%20for%20opportunities", "_blank");
+  }}
+>
+  Chat Now
+</Button>
+
                   </div>
                 </CardContent>
               </Card>
@@ -353,6 +372,51 @@ const Contact = () => {
           </div>
         </div>
       </section>
+
+
+<section className="py-20 bg-white">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="text-center mb-12">
+      <h2 className="text-3xl md:text-4xl font-bold text-gray-900 font-playfair mb-4">
+        Our Office Locations
+      </h2>
+      <p className="text-lg text-gray-600">
+        Visit us in the UAE or India — we’re here to help you grow.
+      </p>
+    </div>
+
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {/* India Office Map */}
+      <div className="w-full h-[450px] shadow-md rounded-lg overflow-hidden">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6472.477355732037!2d83.29740022859333!3d17.726375970045865!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a3943240631685d%3A0x67c4871ce095afb1!2sBhupathi%20Surya%20Central%20Mall!5e0!3m2!1sen!2sin!4v1751702120108!5m2!1sen!2sin"
+          width="100%"
+          height="100%"
+          style={{ border: 0 }}
+          allowFullScreen={true}
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+
+      {/* Dubai Office Map */}
+      <div className="w-full h-[450px] shadow-md rounded-lg overflow-hidden">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d79652.8337235643!2d54.341780105531726!3d24.486738747905008!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8076d1a634b0e363%3A0x6d625b25c99e27c2!2sNM%20HUMAN%20RESOURCES%20CONSULTANCY!5e0!3m2!1sen!2sin!4v1751702070129!5m2!1sen!2sin"
+          width="100%"
+          height="100%"
+          style={{ border: 0 }}
+          allowFullScreen={true}
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
 
       {/* FAQ Section */}
       <section className="py-20 bg-white">
