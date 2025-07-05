@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Link } from 'react-router-dom';
 import { Users, Globe, Building, CheckCircle, Star, Award } from 'lucide-react';
+import { useState,useEffect } from 'react';
 
 import {
   FaDraftingCompass,       // Architecture
@@ -21,6 +22,9 @@ import {
 } from "react-icons/fa";
 
 const Index = () => {
+
+
+
   const stats = [
     { icon: CheckCircle, value: '582+', label: 'Successful Placements' },
     { icon: Users, value: '215+', label: 'Professionals Serving Clients' },

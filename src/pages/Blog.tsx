@@ -102,7 +102,7 @@ const [isDialogOpen, setIsDialogOpen] = useState(false);
 <section
   className="relative py-20 bg-cover bg-center bg-no-repeat"
   style={{
-    backgroundImage: `url('https://rfsonshr.com/wp-content/uploads/2023/10/Rfsons-Meet-the-team.jpg-jpg.webp')`,
+    backgroundImage: `url('https://rfsonshr.com/wp-content/uploads/2024/02/hero-e1708017903334.jpg')`,
   }}
 >
   {/* Dark gradient overlay */}

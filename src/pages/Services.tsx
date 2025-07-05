@@ -132,7 +132,7 @@ const Services = () => {
 <section
   className="relative py-20 bg-cover bg-center bg-no-repeat"
   style={{
-    backgroundImage: `url('https://rfsonshr.com/wp-content/uploads/2023/10/Rfsons-Meet-the-team.jpg-jpg.webp')`,
+    backgroundImage: `url('https://rfsonshr.com/wp-content/uploads/2023/10/Rectangle-137-2-min-1.jpg-jpg.webp')`,
   }}
 >
   {/* Dark gradient overlay */}

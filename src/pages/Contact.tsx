@@ -115,7 +115,7 @@ const Contact = () => {
 <section
   className="relative py-20 bg-cover bg-center bg-no-repeat"
   style={{
-    backgroundImage: `url('https://rfsonshr.com/wp-content/uploads/2023/10/Rfsons-Meet-the-team.jpg-jpg.webp')`,
+    backgroundImage: `url('https://rfsonshr.com/wp-content/uploads/2024/02/RPO.jpg')`,
   }}
 >
   {/* Dark gradient overlay */}
@@ -371,7 +371,7 @@ const Contact = () => {
           </div>
         </div>
       </section>
-      
+
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
