@@ -23,7 +23,7 @@ const App = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 3500); // adjust time if needed
+    const timer = setTimeout(() => setLoading(false), 3500);
     return () => clearTimeout(timer);
   }, []);
 
@@ -33,7 +33,7 @@ if (loading) {
       <img
         src="/assets/logo.png"
         alt="NM HR Consultancy Loader"
-        className="h-44 w-44 animate-pulse"
+        className="md:h-96 md:w-96 h-56 w-56 animate-pulse"
       />
     </div>
   );
